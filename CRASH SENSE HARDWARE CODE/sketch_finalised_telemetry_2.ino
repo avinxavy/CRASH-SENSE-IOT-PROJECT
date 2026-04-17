@@ -1,6 +1,6 @@
 // --- 1. BLYNK & NETWORK CREDENTIALS ---
 #define BLYNK_TEMPLATE_ID "XXXXXX"
-#define BLYNK_TEMPLATE_NAME "EDR"
+#define BLYNK_TEMPLATE_NAME "XXXX"
 #define BLYNK_AUTH_TOKEN "XXXXX"
 String GOOGLE_SCRIPT_URL ="https:URL";
 //wify credentials
