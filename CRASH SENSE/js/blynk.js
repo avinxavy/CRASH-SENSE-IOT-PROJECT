@@ -4,10 +4,10 @@
 ========================================= */
 
 /* 🔑 PUT YOUR REAL BLYNK DEVICE TOKEN HERE */
-const BLYNK_TOKEN = "xI5MfI5eeobFaSr08LAa9fe6dbjqoBtT";
+const BLYNK_TOKEN = "XXXXXXXXXXXXXXX";
 
 /* Base URL */
-const BLYNK_BASE_URL = "https://blynk.cloud/external/api/get";
+const BLYNK_BASE_URL = "XXXXXXXXX";
 
 /* Helper to fetch single pin */
  async function getBlynkValue(pin){
