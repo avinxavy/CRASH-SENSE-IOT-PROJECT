@@ -1,12 +1,12 @@
 // --- 1. BLYNK & NETWORK CREDENTIALS ---
-#define BLYNK_TEMPLATE_ID "TMPL3H7A2k5bc"
+#define BLYNK_TEMPLATE_ID "XXXXXX"
 #define BLYNK_TEMPLATE_NAME "EDR"
-#define BLYNK_AUTH_TOKEN "hqEfxYKfn6L_38aRCwe24sJu125ZfCez"
-String GOOGLE_SCRIPT_URL ="https://script.google.com/macros/s/AKfycbzBK9bRSxRnxSo20Hj143bEMEBGEy_8ciACe58eXw-qZ_BSXjRchOdaUbvp9U1_1ma2/exec";
+#define BLYNK_AUTH_TOKEN "XXXXX"
+String GOOGLE_SCRIPT_URL ="https:URL";
 //wify credentials
-char ssid[] ="LOGILINKS ABEL XAVY";
-char pass[] ="ab123456";
-char auth[] = "hqEfxYKfn6L_38aRCwe24sJu125ZfCez";
+char ssid[] ="XXXXX";
+char pass[] ="XXXXXX";
+char auth[] = "XXXXXXXXX";
 //double core declaration
 TaskHandle_t SensorTask_Handle = NULL;
 TaskHandle_t LoggingTask_Handle = NULL;
