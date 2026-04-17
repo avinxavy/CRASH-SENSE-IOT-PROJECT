@@ -4,10 +4,10 @@
 ========================================= */
 
 /* 🔑 Your Blynk Device Token */
-const BLYNK_TOKEN = "Flc41mHrNo0hCtTPLN8bN91UAbUkK5zp";
+const BLYNK_TOKEN = "XXXXXXXXXXX";
 
 /* Base API */
-const BLYNK_BASE_URL = "https://blynk.cloud/external/api/get";
+const BLYNK_BASE_URL = "XXXXXXXXX";
 
 
 /* =========================================
