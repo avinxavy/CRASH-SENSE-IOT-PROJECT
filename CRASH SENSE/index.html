@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RC Black Box</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <h1>CRASH SENSE - REAL TIME IOT ACCIDENT DETECTION SYSTEM</h1>
+    <button id="themeToggle">Toggle Theme</button>
+</header>
+
+
+<!-- ======= LAYOUT WRAPPER (THIS FIXES THE GAP) ======= -->
+<div class="layoutFix">
+
+
+    <!-- ================= TOP SECTION ================= -->
+    <section class="topSection">
+
+        <!-- MAP -->
+        <div class="card mapCard">
+            <h2>MAP</h2>
+            <div id="map"></div>
+        </div>
+
+        <!-- RIGHT TELEMETRY STACK -->
+        <div class="telemetryStack">
+
+            <div class="card">
+                <h2>SPEED</h2>
+                <canvas id="speedGauge"></canvas>
+                <div class="digital"><span id="speedVal">0</span> km/h</div>
+            </div>
+
+            <div class="card">
+                <h2>G-FORCE</h2>
+                <canvas id="gGauge"></canvas>
+                <div class="digital"><span id="gVal">0</span> g</div>
+            </div>
+
+            <div class="card">
+                <h2>GPS INFO</h2>
+                <p>LAT : <span id="lat">--</span></p>
+                <p>LON : <span id="lon">--</span></p>
+                <p>TIME : <span id="time">--</span></p>
+            </div>
+
+            <div class="card orientationCard">
+                <h2>PITCH</h2>
+                <img src="assets/side_pitch_dark.gif" class="carGif" id="carPitch">
+                <div class="digital"><span id="pitchVal">0</span>°</div>
+            </div>
+
+            <div class="card orientationCard">
+                <h2>ROLL</h2>
+                <img src="assets/side_roll_dark.gif" class="carGif" id="carRoll">
+                <div class="digital"><span id="rollVal">0</span>°</div>
+            </div>
+
+            <div class="card orientationCard">
+                <h2>YAW</h2>
+                <img src="assets/side_yaw_strong_dark.gif" class="carGif" id="carYaw">
+                <div class="digital"><span id="yawVal">0</span>°</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= BOTTOM SECTION ================= -->
+    <section class="bottomSection">
+
+        <!-- EVENTS DATA -->
+        <div class="card logCard">
+            <h2>EVENTS DATA</h2>
+
+            <table id="eventTable">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Speed</th>
+                        <th>G</th>
+                        <th>Lat</th>
+                        <th>Lon</th>
+                        <th>Pitch</th>
+                        <th>Roll</th>
+                        <th>Yaw</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <button id="exportCSV">Export CSV</button>
+        </div>
+
+
+        <!-- ALERT PANEL -->
+        <div class="card alertCard" id="alertPanel">
+            <h2>ALERT</h2>
+            <p id="alertMsg">System Initializing...</p>
+            <!-- <button id="sosBtn" disabled>SOS</button> -->
+        </div>
+
+    </section>
+
+</div>
+<!-- ======= END layoutFix ======= -->
+
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="js/gauges.js"></script>
+<script src="js/orientation.js"></script>
+<script src="js/map.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver/dist/FileSaver.min.js"></script>
+<script src="js/logger.js"></script>
+<script src="js/alert.js"></script>
+<!-- <script src="js/alert1.js"></script> -->
+<!-- <script src="js/blynk.js"></script> -->
+<!-- <script src="js/blynk1.js"></script> -->
+<script src="js/data-sim.js"></script>
+<script src="js/main.js"></script>
+<!-- <script src="js/main1.js"></script> -->
+
+</body>
+</html>

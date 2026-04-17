@@ -1,0 +1,257 @@
+/* ===============================
+   RESET
+================================= */
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+/* ===============================
+   THEME VARIABLES
+================================= */
+:root{
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --text:#1d1d1f;
+    --accent:#0a84ff;
+    --needle:#1d1d1f;
+
+    --soft:#ebebeb;
+    --border:#e0e0e0;
+    --shadow:rgba(0,0,0,0.08);
+
+    --status-normal:#00c34483;
+    --status-accident:#f9070779;
+}
+
+/* 🌙 DARK MODE */
+body.dark{
+    --bg:#0b0b0c;
+    --card:#161617;
+    --text:#e5e5ea;
+    --needle:#ffffff;
+
+    --soft:#222326;
+    --border:#2c2c2e;
+    --shadow:rgba(0,0,0,0.6);
+
+    --status-normal:#00c34455;
+    --status-accident:#f9070755;
+}
+
+/* ===============================
+   BODY
+================================= */
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+    transition:background .3s ease,color .3s ease;
+}
+
+/* ===============================
+   HEADER
+================================= */
+.header{
+    padding:18px 28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+#themeToggle{
+    background:var(--accent);
+    border:none;
+    color:#fff;
+    padding:8px 14px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* ===============================
+   MAIN GRID
+================================= */
+.layoutFix{
+    display:grid;
+    grid-template-columns: 1fr 320px;
+    grid-template-rows: auto auto;
+    gap:18px;
+    padding:0 18px 18px;
+}
+
+.topSection,
+.bottomSection{
+    display:contents;
+}
+
+/* ===============================
+   CARD STYLE
+================================= */
+.card{
+    background:var(--card);
+    border-radius:22px;
+    padding:16px;
+    box-shadow:0 8px 24px var(--shadow);
+    color:var(--text);
+    transition:background .3s ease,color .3s ease;
+}
+
+.card h2{
+    color:var(--accent);
+    margin-bottom:12px;
+    font-size:15px;
+}
+
+/* ===============================
+   COLUMN PLACEMENT
+================================= */
+.mapCard{ grid-column:1; grid-row:1; }
+.logCard{ grid-column:1; grid-row:2; }
+
+.telemetryStack{
+    grid-column:2;
+    grid-row:1;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.telemetryStack .card{
+    perspective:800px;
+}
+
+.alertCard{ grid-column:2; grid-row:2; }
+
+/* ===============================
+   MAP
+================================= */
+.mapCard{ padding:18px; }
+
+.mapCard .mapWrapper{
+    height:480px;
+}
+
+#map{
+    width:97%;
+    height:97%;
+    border-radius:16px;
+}
+
+/* ===============================
+   EVENTS TABLE
+================================= */
+#eventTable{
+    width:100%;
+    border-collapse:collapse;
+    color:var(--text);
+}
+
+#eventTable th{
+    text-align:left;
+    padding-bottom:8px;
+    color:var(--accent);
+}
+
+#eventTable td{
+    padding:6px 0;
+}
+
+#eventTable tbody{
+    max-height:220px;
+    overflow-y:auto;
+    display:block;
+}
+
+#eventTable thead,
+#eventTable tbody tr{
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+
+/* ===============================
+   TELEMETRY SMALL BOXES
+================================= */
+.digital{
+    background:var(--soft);
+    color:var(--text);
+    padding:10px;
+    border-radius:10px;
+    margin-top:10px;
+    text-align:center;
+}
+
+/* ===============================
+   🚗 CAR GIF (FIXED FOR DARK MODE)
+================================= */
+.carGif{
+    width:140px;
+    display:block;
+    margin:10px auto;
+    transition:transform 0.25s ease;
+    transform-origin:center center;
+
+    /* REMOVE multiply → this caused white box */
+    mix-blend-mode:normal;
+    background:transparent;
+}
+
+/* 🌙 Dark mode visual tuning */
+body.dark .carGif{
+    filter:
+        brightness(1.15)
+        contrast(1.15)
+        drop-shadow(0 2px 6px rgba(0,0,0,0.8));
+}
+
+/* Ensure no image background leaks */
+body.dark .card img{
+    background:transparent !important;
+}
+
+/* ===============================
+   BUTTONS
+================================= */
+button{
+    background:var(--accent);
+    border:none;
+    color:#fff;
+    padding:10px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* ===============================
+   STATUS COLORS (EVENT LOG)
+================================= */
+.normalRow{
+    background-color:var(--status-normal);
+}
+
+.accidentRow{
+    background-color:var(--status-accident);
+}
+
+.normalRow td{
+    border-left:4px solid var(--status-normal);
+}
+
+.accidentRow td{
+    border-left:4px solid var(--status-accident);
+}
+
+/* ===============================
+   ALERT PANEL STATUS COLORS
+================================= */
+.alertCard.normal{
+    background:var(--status-normal);
+    border:2px solid var(--status-normal);
+    color:#fff;
+}
+
+.alertCard.accident{
+    background:var(--status-accident);
+    border:2px solid var(--status-accident);
+    color:#fff;
+}
